@@ -37,7 +37,7 @@ class SwiperCarousel extends HTMLElement {
   }
   customElements.define("swiper-carousel", SwiperCarousel);
   
-  // mainSlider 클래스를 SwiperCarousel을 상속받아 추가 기능을 구현
+  // mainSlider 클래스를 SwiperCarousel로 상속받아 추가 기능을 구현
   class mainSlider extends SwiperCarousel {
     constructor() {
       super();
