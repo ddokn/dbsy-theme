@@ -1,1 +1,282 @@
-<h1>Welcome to My Site</h1>
+<style>
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__logo {
+    margin: 0;
+    font-size: 0;
+}
+
+.header__logo-img {
+    width: 56px;
+    height: 20px;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__subscribe {
+    display: flex;
+    padding: 8px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    background: #423067;
+    transition: background 0.3s ease;
+}
+
+.header__subscribe:hover {
+    background: #31234D;
+}
+
+.header__subscribe-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.header__subscribe-text {
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 145%;
+}
+
+.header__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.menu__list {
+    display: none;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding: 10px 20px 20px 20px;
+    z-index: 100;
+    border-radius: 0px 0px 12px 12px;
+}
+
+.menu__list--visible {
+    display: block;
+}
+
+.menu__link > svg {
+    transition: transform 0.3s ease;
+}
+
+.menu__link--active > svg {
+    transform: rotate(180deg);
+}
+
+.header__mobile-menu--active .backdrop {
+    display: block;
+}
+
+@media (min-width: 990px) {
+    .header {
+        padding: 32px 20px;
+    }
+    
+    .header__left {
+        gap: 80px;
+    }
+    
+    .header__logo-img {
+        width: 84px;
+        height: 30px;
+    }
+    
+    .header__right {
+        gap: 40px;
+    }
+    
+    .header__icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* 메뉴 관련 */
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .menu__item {
+        position: relative;
+    }
+    
+    .menu__link {
+        color: #231E1E;
+        font-family: Pretendard;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 145%;
+        text-transform: uppercase;
+        transition: opacity 0.3s ease;
+    }
+    
+    .menu__list {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 40px;
+    }
+    
+    .menu__item {
+        position: relative;
+    }
+    
+    .menu__item.active > a {
+        color: #423067;
+    }
+
+    .menu__link {
+        color: #231E1E;
+        font-family: Pretendard;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 145%;
+        text-transform: uppercase;
+        transition: opacity 0.3s ease;
+    }
+
+    .menu__link:hover {
+        opacity: 0.4;
+    }
+
+    .menu__submenu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        background-color: #fff;
+        padding: 10px 0;
+        min-width: 140px;
+        border: 1px solid rgba(35, 30, 30, 0.10);
+        border-radius: 4px;
+        z-index: 10;
+    }
+    
+    .menu__submenu::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: transparent;
+    }
+    
+    .menu__submenu--show {
+        display: block;
+    }
+    
+    .menu__submenu-link {
+        display: block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: opacity 0.3s ease, background 0.3s ease;
+    }
+    
+    .menu__submenu-link:hover {
+        background: #F6F6F6;
+    }
+
+    .menu__list {
+        display: flex;
+        position: static;
+        height: auto;
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 989px) {
+    .menu__item + .menu__item {
+        margin-top: 22px;
+    }
+
+    .menu__submenu {
+        display: none;
+        padding-left: 12px;
+        margin-top: 12px;
+    }
+
+    .menu__submenu--show {
+        display: block;
+    }
+
+    .menu__link {
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .menu__submenu-link {
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .menu__submenu-item + .menu__submenu-item {
+        margin-top: 12px;
+    }
+}
+
+</style>
+
+<div class="header page-width">
+    <div class="header__left">
+        <mobile-menu-button class="header__mobile-menu large-up-hide">
+            <img src="/assets/icon_menu.svg" alt="menu" class="header__icon">
+            <div data-snippet="header-menu"></div>
+            <!-- <div class="backdrop"></div> -->
+        </mobile-menu-button>
+        <h1 class="header__logo">
+            <a href="/">
+                <img src="/assets/logo.svg" alt="logo" class="header__logo-img">
+            </a>
+        </h1>
+        <nav class="menu small-hide">
+            <header-dropdown-menu class="menu">
+                <div data-snippet="header-menu"></div>
+            </header-dropdown-menu>
+        </nav>
+    </div>
+    <div class="header__right">
+        <a href="/" class="small-hide header__subscribe">
+            <img src="/assets/icon_mail.svg" alt="뉴스레터 구독" class="header__subscribe-icon">
+            <span class="header__subscribe-text">뉴스레터 구독</span>
+        </a>
+        <a href="/">
+            <img src="/assets/icon_profile.svg" alt="마이페이지" class="header__icon">
+        </a>
+        <a href="/">
+            <img src="/assets/icon_search.svg" alt="검색" class="header__icon">
+        </a>
+    </div>
+</div>
