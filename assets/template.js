@@ -1,45 +1,66 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    // 먼저 모든 섹션을 로드
-    const sections = document.querySelectorAll('[data-section]');
-    for (const section of sections) {
-        const sectionName = section.getAttribute('data-section');
-        const path = `/sections/${sectionName}.html`;
-        await insertSection(path, section);
-    }
+const cache = new Map();
 
-    // 섹션 로드 후 스니펫 로드
-    const snippets = document.querySelectorAll('[data-snippet]');
-    console.log('Found snippets:', snippets.length);
-    snippets.forEach(snippet => {
-        const snippetName = snippet.getAttribute('data-snippet');
-        const snippetPath = `/snippets/${snippetName}.html`;
-        console.log('Loading snippet:', snippetPath);
-        insertSnippet(snippetPath, snippet);
-    });
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const sections = document.querySelectorAll('[data-section]');
+        const snippets = document.querySelectorAll('[data-snippet]');
+        
+        [...sections, ...snippets].forEach(element => {
+            element.innerHTML = '<div class="loading">로딩 중...</div>';
+        });
+
+        await Promise.all([
+            loadComponents(sections, 'section'),
+            loadComponents(snippets, 'snippet')
+        ]);
+    } catch (error) {
+        console.error('컴포넌트 로딩 실패:', error);
+    }
 });
 
-async function loadHTML(filePath) {
-    try {
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error(`Failed to load ${filePath}`);
-        return await response.text();
-    } catch (error) {
-        console.error("Error loading HTML:", error);
-        return `<div>Error loading ${filePath}</div>`;
+async function loadComponents(elements, type) {
+    const basePath = type === 'section' ? '/sections' : '/snippets';
+    
+    return Promise.all(
+        Array.from(elements).map(async element => {
+            const name = element.getAttribute(`data-${type}`);
+            const path = `${basePath}/${name}.html`;
+            
+            try {
+                if (type === 'section') {
+                    await insertSection(path, element);
+                } else {
+                    await insertSnippet(path, element);
+                }
+            } catch (error) {
+                element.innerHTML = `<div class="error">${name} 로딩 실패</div>`;
+            }
+        })
+    );
+}
+
+async function insertSection(path, element) {
+    const html = await loadHTML(path);
+    element.innerHTML = html;
+    
+    const snippetsInSection = element.querySelectorAll('[data-snippet]');
+    if (snippetsInSection.length > 0) {
+        await loadComponents(snippetsInSection, 'snippet');
     }
 }
 
-async function insertSection(sectionPath, element) {
-    const html = await loadHTML(sectionPath);
+async function insertSnippet(path, element) {
+    const html = await loadHTML(path);
     element.innerHTML = html;
 }
 
-async function insertSnippet(snippetPath, element) {
-    try {
-        const html = await loadHTML(snippetPath);
-        console.log('Loaded snippet content:', html); // 로드된 내용 확인
-        element.innerHTML = html;
-    } catch (error) {
-        console.error('Error in insertSnippet:', error);
+async function loadHTML(path) {
+    if (cache.has(path)) {
+        return cache.get(path);
     }
+    
+    const response = await fetch(path);
+    const html = await response.text();
+    cache.set(path, html);
+    return html;
 }
