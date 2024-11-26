@@ -43,15 +43,75 @@ customElements.define("swiper-carousel", SwiperCarousel);
 
 class mainSlider extends SwiperCarousel {
   _createCarousel(config = null) {
+    const swiperWrapper = this.querySelector('.swiper-wrapper');
+    const originalSlides = Array.from(this.querySelectorAll('.swiper-slide'));
+    
+    // 원본 슬라이드를 복제하여 앞뒤로 추가
+    originalSlides.forEach(slide => {
+      const cloneBefore = slide.cloneNode(true);
+      const cloneAfter = slide.cloneNode(true);
+      swiperWrapper.insertBefore(cloneBefore, swiperWrapper.firstChild);
+      swiperWrapper.appendChild(cloneAfter);
+    });
+
+    const slideCount = originalSlides.length; // 실제 슬라이드 개수
+
     const mainConfig = {
-      spaceBetween: 0,
-      loop: false,
-      effect: 'fade',
-      fadeEffect: { crossFade: true },
-      speed: 1000,
+      spaceBetween: 10,
+      loop: true,
+      speed: 500,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loopedSlides: slideCount, // 총 슬라이드 개수
+      lazy: {
+        loadPrevNext: true,
+        loadOnTransitionStart: true
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 1.2,
+        },
+        990: {
+          slidesPerView: 1.2,
+        },
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          // 실제 슬라이드 개수만 반영
+          if (index < slideCount) {
+            return '<span class="' + className + '"></span>'; // 텍스트 없이 기본 bullet 생성
+          }
+          return ''; // 복제된 슬라이드에 대한 bullet은 생성하지 않음
+        }
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      on: {
+        init: function(swiper) {
+          // 초기화 시 realIndex에 따라 active 상태 설정
+          swiper.pagination.bullets.forEach((bullet, index) => {
+            if (index === swiper.realIndex) {
+              bullet.classList.add('swiper-pagination-bullet-active');
+            } else {
+              bullet.classList.remove('swiper-pagination-bullet-active');
+            }
+          });
+        },
+        slideChange: function(swiper) {
+          // 슬라이드 변경 시 realIndex에 따라 active 상태 설정
+          swiper.pagination.bullets.forEach((bullet, index) => {
+            // realIndex를 사용하여 active 상태를 업데이트
+            if (index === swiper.realIndex % slideCount) {
+              bullet.classList.add('swiper-pagination-bullet-active');
+            } else {
+              bullet.classList.remove('swiper-pagination-bullet-active');
+            }
+          });
+        }
       }
     };
     super._createCarousel({ ...mainConfig, ...config });
@@ -66,7 +126,6 @@ class mainSlider extends SwiperCarousel {
     const schema = this.swiperSchema();
     return {
       on: {
-        init: () => {},
         realIndexChange: (swiper) => {
           const control = swiper.el.querySelector('.swiper-controls');
           control?.style.setProperty('--color', schema[swiper.realIndex]?.color || 'defaultColor');
@@ -77,8 +136,7 @@ class mainSlider extends SwiperCarousel {
         slideChangeTransitionEnd: (swiper) => {
           const video = swiper.slides[swiper.activeIndex].querySelector('video');
           video?.play();
-        },
-        resize: () => {}
+        }
       }
     };
   }

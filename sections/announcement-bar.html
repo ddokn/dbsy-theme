@@ -1,0 +1,31 @@
+<style>
+    div[data-section="announcement-bar"] {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+    .announcement-bar {
+        background: #423067;
+    }
+    .announcement-bar > a {
+        padding: 8px 10px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        gap: 4px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+    }
+</style>
+
+<div class="announcement-bar">
+    <a href="">
+        <img src="/assets/icon_mail.svg" alt="뉴스레터 구독" class="header__subscribe-icon">
+        <span class="announcement-bar__text">뉴스레터 구독</span>
+    </a>
+</div>

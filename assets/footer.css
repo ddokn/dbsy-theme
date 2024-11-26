@@ -1,0 +1,106 @@
+footer {
+    background: #ECEEF1;
+}
+.footer {
+    padding: 20px 20px 40px 20px;
+}
+.footer__logo {
+    margin-bottom: 20px;
+}
+.footer__logo img {
+    width: 68px;
+    height: 24px;
+}
+.footer__links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+.footer__links > a {
+    font-size: 12px;
+    font-weight: 700;
+}
+.footer__info {
+    font-size: 12px;
+}
+.footer__info > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 12px;
+    margin-bottom: 4px;
+}
+.footer__info > li::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #231E1E;
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.4;
+}
+.footer__info > li:last-child::before {
+    display: none;
+}
+.footer__copyright {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+.footer__bottom > a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #231E1E;
+    opacity: 0.6;
+    position: relative;
+    margin-right: 12px;
+}
+.footer__bottom > a::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #231E1E;
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.4;
+}
+.footer__bottom > a:last-child::before {
+    display: none;
+}
+@media (min-width: 990px) {
+    .footer {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+    .footer__links > a,
+    .footer__info > li,
+    .footer__copyright,
+    .footer__bottom > a {
+        font-size: 14px;
+    }
+    .footer__copyright {
+        margin-bottom: 14px;
+    }
+    .footer__links-wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 10px;
+    }
+    .footer__links {
+        order: 2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .footer__info-list {
+        order: 1;
+        width: 568px;
+    }
+}

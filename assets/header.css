@@ -1,3 +1,12 @@
+header {
+    position: sticky;
+    top: 40px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #fff;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -90,6 +99,10 @@
 }
 
 @media (min-width: 990px) {
+    header{
+       top: 0; 
+    }
+
     .header {
         padding: 32px 20px;
     }
