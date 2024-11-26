@@ -1,0 +1,277 @@
+<style>
+    .tab-container {
+        background: rgba(236, 238, 241, 0.60);
+        border-radius: 12px;
+        padding: 20px;
+    }
+    .tab-list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .tab-item__link {
+        font-size: 16px;
+        font-weight: 700;
+        position: relative;
+    }
+    .tab-item__link.active::before {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        opacity: 0.6;
+        background: #A995D8;
+        z-index: -1;
+    }
+    .tab-body {
+        margin-top: 16px;
+    }
+    .tab-body__item {
+        border-top: 1px solid rgba(35, 30, 30, 0.10);
+    }
+    .tab-body__link {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .tab-body__category {
+        flex-basis: 70px;
+        color: #423067;
+        font-size: 14px;
+        font-weight: 500;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .tab-body__title {
+        flex-grow: 1;
+        color: #231E1E;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        overflow-wrap: break-word;
+        max-width: calc(100% - 80px - 82px);
+    }
+    .tab-body__title-text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .tab-body__title-count {
+        margin-left: 2px;
+        color: rgba(35, 30, 30, 0.40);
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .tab-body__date {
+        color: rgba(35, 30, 30, 0.60);
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        flex-basis: 72px;
+        justify-content: flex-end;
+    }
+    .normal-board {
+        margin-top: 10px;
+        border-radius: 12px;
+        border: 1px solid #D9D9D9;
+        padding: 20px;
+    }
+    .normal-board__title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        position: relative;
+    }
+    .normal-board__body {
+        margin-top: 16px;
+    }
+    .normal-board__item {
+        border-top: 1px solid rgba(35, 30, 30, 0.10);
+    }
+    .normal-board__link {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .normal-board__number {
+        font-size: 14px;
+        font-weight: 700;
+        flex-basis: 20px;
+    }
+    .normal-board__wrap {
+        flex-grow: 1;
+        color: #231E1E;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        overflow-wrap: break-word;
+        max-width: calc(100% - 30px);
+    }
+    .normal-board__title-text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .normal-board__title-count {
+        margin-left: 2px;
+        color: rgba(35, 30, 30, 0.40);
+        font-size: 14px;
+        font-weight: 500;    
+    }
+    
+</style>
+
+<h2 class="setcion-sub-title page-width">COMMUNITY</h2>
+<div data-section="featured-board" class="page-width">
+    <main-tab>
+        <div class="tab-container">
+            <ul class="tab-list list-unstyled" data-role="tab-list">
+                <li class="tab-item">
+                    <a href="#tab-body-0" class="tab-item__link active" data-index="0">
+                        뉴스레터
+                    </a>
+                </li>
+                <li class="tab-item">
+                    <a href="#tab-body-1" class="tab-item__link" data-index="1">
+                        게시판
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-body" id="tab-body-0" data-role="tab-body">
+                <div class="tab-body__content">
+                    <ul class="list-unstyled">
+                        <li class="tab-body__item">
+                            <a href="#" class="tab-body__link">
+                                <span class="tab-body__category">
+                                    카테고리명
+                                </span>
+                                <div class="tab-body__title">
+                                    <span class="tab-body__title-text">
+                                        제목
+                                    </span>
+                                    <span class="tab-body__title-count">
+                                        (0)
+                                    </span>
+                                </div>
+                                <div class="tab-body__date">
+                                    2024.01.01
+                                </div>
+                            </a>
+                        </li>
+                        <li class="tab-body__item">
+                            <a href="#" class="tab-body__link">
+                                <span class="tab-body__category">
+                                    카테고리명
+                                </span>
+                                <div class="tab-body__title">
+                                    <span class="tab-body__title-text">
+                                        제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목
+                                    </span>
+                                    <span class="tab-body__title-count">
+                                        (0)
+                                    </span>
+                                </div>
+                                <div class="tab-body__date">
+                                    2024.01.01
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-body" id="tab-body-1" data-role="tab-body">
+                <div class="tab-body__content">
+                    <div class="tab-body__content">
+                        <ul class="list-unstyled">
+                            <li class="tab-body__item">
+                                <a href="#" class="tab-body__link">
+                                    <span class="tab-body__category">
+                                        카테고리명
+                                    </span>
+                                    <div class="tab-body__title">
+                                        <span class="tab-body__title-text">
+                                            제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목
+                                        </span>
+                                        <span class="tab-body__title-count">
+                                            (0)
+                                        </span>
+                                    </div>
+                                    <div class="tab-body__date">
+                                        2024.01.01
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tab-body__item">
+                                <a href="#" class="tab-body__link">
+                                    <span class="tab-body__category">
+                                        카테고리명
+                                    </span>
+                                    <div class="tab-body__title">
+                                        <span class="tab-body__title-text">
+                                            ㅋㅋㅋ
+                                        </span>
+                                        <span class="tab-body__title-count">
+                                            (0)
+                                        </span>
+                                    </div>
+                                    <div class="tab-body__date">
+                                        2024.01.01
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main-tab>
+    <div class="normal-board">
+        <div class="normal-board__header">
+            <h3 class="normal-board__title">
+                게시판
+            </h3>
+        </div>
+        <div class="normal-board__body">
+            <ul class="list-unstyled">
+                <li class="normal-board__item">
+                    <a href="#" class="normal-board__link">
+                        <span class="normal-board__number">
+                            1
+                        </span>
+                        <div class="normal-board__wrap">
+                            <span class="normal-board__title-text">
+                                제목
+                            </span>
+                            <span class="normal-board__title-count">
+                                (0)
+                            </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="normal-board__item"></li>
+                    <a href="#" class="normal-board__link">
+                        <span class="normal-board__number">
+                            1
+                        </span>
+                        <div class="normal-board__wrap">
+                            <span class="normal-board__title-text">
+                                제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목
+                            </span>
+                            <span class="normal-board__title-count">
+                                (0)
+                            </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

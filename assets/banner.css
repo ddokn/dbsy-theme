@@ -1,7 +1,4 @@
 /** Text Banner **/
-section[data-section="text-banner"] {
-    margin-top: 60px; 
-}
 .text-banner__content > a {
     position: relative;
     height: 80px;

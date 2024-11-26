@@ -286,3 +286,34 @@ class MobileMenu extends HTMLElement {
   }
 }
 customElements.define('mobile-menu-button', MobileMenu);
+
+class MainTab extends HTMLElement {
+  constructor() {
+      super();
+      this.tabButton = this.querySelectorAll('.tab-item a');
+      this.tabBody = this.querySelectorAll('.tab-body');
+      this.init();
+  }
+  init() {
+      this.tabButton.forEach(item => {
+          item.addEventListener('click', this.setTab.bind(this));
+      });
+      this.tabBody.forEach((item, index) => {
+          item.classList.toggle('hidden', index !== 0);
+      })
+  }
+  setTab(event) {
+      event.preventDefault();
+      const index = parseInt(event.currentTarget.dataset.index);
+      console.log(index)
+      this.tabButton.forEach((item, idx) => {
+          item.classList.toggle('active', idx === index);
+      })
+      this.tabBody.forEach((item, idx) => {
+          item.classList.toggle('hidden', idx !== index);
+      });
+      const changeEvent = new CustomEvent('tab:changed', { detail: { tabIndex: index } });
+      this.dispatchEvent(changeEvent);
+  }
+}
+customElements.define('main-tab', MainTab);
