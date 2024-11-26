@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const sections = document.querySelectorAll('[data-section]');
         const snippets = document.querySelectorAll('[data-snippet]');
         
-        [...sections, ...snippets].forEach(element => {
-            element.innerHTML = '<div class="loading">로딩 중...</div>';
-        });
+        // [...sections, ...snippets].forEach(element => {
+        //     element.innerHTML = '<div class="loading">로딩 중...</div>';
+        // });
 
         await Promise.all([
             loadComponents(sections, 'section'),
