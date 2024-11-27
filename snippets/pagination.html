@@ -1,0 +1,40 @@
+<style>
+    .pagination {
+        margin: 40px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .pagination__link {
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        width: 28px;
+        height: 28px;
+        align-items: center;
+        justify-content: center;
+    }
+    .pagination__current {
+        background: #452F6B;
+        color: #fff;
+        border-radius: 50%;
+    }
+</style>
+
+<div class="pagination">
+    <a href="#" class="pagination__link pagination__current">1</a>
+    <a href="#" class="pagination__link">2</a>
+    <a href="#" class="pagination__link">3</a>
+    <a href="#" class="pagination__link">4</a>
+    <a href="#" class="pagination__link">5</a>
+    <a href="#" class="pagination__link">6</a>
+    <a href="#" class="pagination__link">7</a>
+    <a href="#" class="pagination__link">8</a>
+    <a href="#" class="pagination__link">9</a>
+    
+     <!-- 페이지 수가 9개 초과 시 "..." 표시 -->
+    <a href="#" class="pagination__link">...</a>
+
+    <!-- 마지막 페이지 번호 표시 -->
+    <a href="#" class="pagination__link">22</a>
+</div>
