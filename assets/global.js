@@ -318,34 +318,49 @@ class MainTab extends HTMLElement {
 }
 customElements.define('main-tab', MainTab);
 
+const warnedTargets = new Set();
 const setModal = () => {
+  const processedElements = new Set();
+
   const open = document.querySelectorAll('[data-modal-open]');
   open.forEach(item => {
-      if (document.getElementById(item.dataset.modalOpen)) {
-          const target = document.getElementById(item.dataset.modalOpen);
+      if (processedElements.has(item)) return;
+      
+      const targetId = item.dataset.modalOpen;
+      const target = document.getElementById(targetId);
+      
+      if (target) {
           item.addEventListener('click', (event) => {
               event.preventDefault();
               target.open();
-          })
-      } else {
-          console.warn('No target.')
+          });
+          processedElements.add(item);
+      } else if (targetId && !warnedTargets.has(targetId)) {
+          console.warn(`Modal target not found: ${targetId}`);
+          warnedTargets.add(targetId);
       }
-  })
+  });
+
   const close = document.querySelectorAll('[data-modal-close]');
   close.forEach(item => {
-      if (document.getElementById(item.dataset.modalOpen)) {
-          const target = document.getElementById(item.dataset.modalOpen);
+      if (processedElements.has(item)) return;
+      
+      const targetId = item.dataset.modalClose;
+      const target = document.getElementById(targetId);
+      
+      if (target) {
           item.addEventListener('click', (event) => {
               event.preventDefault();
               target.close();
-          })
-      } else {
-          console.warn('No target.')
+          });
+          processedElements.add(item);
+      } else if (targetId && !warnedTargets.has(targetId)) {
+          console.warn(`Modal target not found: ${targetId}`);
+          warnedTargets.add(targetId);
       }
-  })
+  });
 }
 
-// MutationObserver를 사용하여 동적으로 추가되는 요소들을 감지
 const observeDOM = () => {
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -355,7 +370,6 @@ const observeDOM = () => {
     });
   });
 
-  // document.body 전체를 관찰
   observer.observe(document.body, {
     childList: true,
     subtree: true

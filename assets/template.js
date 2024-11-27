@@ -1,20 +1,23 @@
 const cache = new Map();
 
 document.addEventListener("DOMContentLoaded", async () => {
+    const loadingEl = document.createElement('div');
+    loadingEl.className = 'loading-indicator';
+    document.body.prepend(loadingEl);
+    
     try {
         const sections = document.querySelectorAll('[data-section]');
         const snippets = document.querySelectorAll('[data-snippet]');
         
-        // [...sections, ...snippets].forEach(element => {
-        //     element.innerHTML = '<div class="loading">로딩 중...</div>';
-        // });
-
         await Promise.all([
             loadComponents(sections, 'section'),
             loadComponents(snippets, 'snippet')
         ]);
+        
+        loadingEl.remove();
     } catch (error) {
         console.error('컴포넌트 로딩 실패:', error);
+        loadingEl.remove();
     }
 });
 
