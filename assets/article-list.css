@@ -85,7 +85,7 @@ section[data-section="article-list-card"] {
     position: relative;
 }
 .article-list-footer > button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
 }
