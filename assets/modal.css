@@ -1,0 +1,204 @@
+/** Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: calc(100vw - 40px);
+    max-width: 400px;
+    z-index: 200;
+    transition: top 0.25s, opacity 0.25s, transform 0.25s;
+    opacity: 1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    padding: 16px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header > strong {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.modal-body {
+    padding: 0 20px 20px;
+}
+
+.toast-backdrop {
+    display: block !important;
+    background: rgba(0, 0, 0, 0.48);
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/** 공유하기 **/
+.share-list {
+    display: flex;
+    width: 284px;
+    padding: 10px 0px 20px 0px;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.share-item {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    background: #F2F3F6;
+    justify-content: center;
+}
+.share-item.facebook > img {
+    width: 38px;
+    height: 38px;
+}
+.share-item.twitter > img {
+    width: 30px;
+    height: 30px;
+}
+.share-item.line > img {
+    width: 36px;
+    height: 36px;
+}
+.share-item.band > img {
+    width: 36px;
+    height: 36px;
+}
+.share-item.kakao > img {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    z-index: 1;
+}
+.share-item.kakao {
+    position: relative;
+}
+.share-item.kakao::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #FEE500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.share-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.share-link-input {
+    display: flex;
+    height: 44px;
+    padding: 12px 14px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 4px;
+    border: 1px solid rgba(35, 30, 30, 0.10);
+    background: #FAFAFA;
+}
+.share-link-copy {
+    display: flex;
+    height: 44px;
+    padding: 8px 16px 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(35, 30, 30, 0.15);
+    background: #FFF;
+    cursor: pointer;
+}
+
+/** 로그인 **/
+.form-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.form-group > input {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    padding: 12px 14px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid rgba(35, 30, 30, 0.10);
+    background: #FAFAFA;
+}
+.form-login-footer {
+    margin: 10px 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.form-login-remember {
+
+}
+.form-login-register {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+.form-login-register .text-link {
+    color: #A995D8;
+}
+
+/** 신고하기 **/
+.form-report {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(35, 30, 30, 0.10);
+    background: #FAFAFA;
+    transition: border 0.25s, background 0.25s;
+}
+.form-report.textarea-wrapper.focus {
+    border: 1px solid #231E1E;
+    background: #FFF;
+}
+.form-report textarea {
+    width: 100%;
+    height: 95px;
+    border: 0;
+    background: transparent;
+    font-family: Pretendard;
+    resize: unset;
+}
+.form-report .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+}

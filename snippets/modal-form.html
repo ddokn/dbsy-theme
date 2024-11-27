@@ -1,0 +1,31 @@
+<main-modal class="hidden" id="modalForm">
+    <div class="modal" tabindex="-1">
+        <div class="modal-header">
+            <strong>신고하기</strong>
+            <a href="javascript:;" role="button" class="btn-close modal-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4.43813 3.62625L17 16.1881L15.8036 17.3845L3.24176 4.82262L4.43813 3.62625Z" fill="#231E1E"/>
+                    <path d="M3 16.0619L15.5619 3.5L16.7582 4.69637L4.19637 17.2582L3 16.0619Z" fill="#231E1E"/>
+                </svg>
+            </a>
+        </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="form-report textarea-wrapper">
+                        <div class="form-group">
+                            <textarea id="content" name="content" placeholder="신고 사유를 작성하세요." required 
+                                onfocus="this.closest('.textarea-wrapper').classList.add('focus')"
+                                onblur="this.closest('.textarea-wrapper').classList.remove('focus')">
+                            </textarea>
+                        </div>
+                        <button type="submit" class="button button--primary full-width">
+                            <img src="/assets/icon_edit.svg" width="20" height="20">
+                            제출
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>  
+    </div>
+</main-modal>

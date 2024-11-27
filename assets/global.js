@@ -317,3 +317,97 @@ class MainTab extends HTMLElement {
   }
 }
 customElements.define('main-tab', MainTab);
+
+const setModal = () => {
+  const open = document.querySelectorAll('[data-modal-open]');
+  open.forEach(item => {
+      if (document.getElementById(item.dataset.modalOpen)) {
+          const target = document.getElementById(item.dataset.modalOpen);
+          item.addEventListener('click', (event) => {
+              event.preventDefault();
+              target.open();
+          })
+      } else {
+          console.warn('No target.')
+      }
+  })
+  const close = document.querySelectorAll('[data-modal-close]');
+  close.forEach(item => {
+      if (document.getElementById(item.dataset.modalOpen)) {
+          const target = document.getElementById(item.dataset.modalOpen);
+          item.addEventListener('click', (event) => {
+              event.preventDefault();
+              target.close();
+          })
+      } else {
+          console.warn('No target.')
+      }
+  })
+}
+
+// MutationObserver를 사용하여 동적으로 추가되는 요소들을 감지
+const observeDOM = () => {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.addedNodes.length) {
+        setModal();
+      }
+    });
+  });
+
+  // document.body 전체를 관찰
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+};
+
+// 초기 실행
+document.addEventListener('DOMContentLoaded', () => {
+  setModal();
+  observeDOM();
+});
+
+class mainModal extends HTMLElement {
+  constructor() {
+    super();
+    this.backdrop = null;
+    this.querySelectorAll('.modal-close').forEach(item => {
+      item.addEventListener('click', this.close.bind(this));
+    });
+    if (this.dataset.forceOpen && this.dataset.forceOpen.toLowerCase() === 'true') {
+      this.open();
+    }
+  }
+  
+  toggleBackdrop(show = true) {
+    // 기존 backdrop이 있다면 제거
+    const existingBackdrop = document.querySelector('.toast-backdrop');
+    if (existingBackdrop) {
+      existingBackdrop.remove();
+    }
+
+    if (show) {
+      const backdrop = document.createElement('div');
+      backdrop.className = 'toast-backdrop';
+      document.body.appendChild(backdrop); // body에 직접 추가
+      this.backdrop = backdrop;
+      backdrop.addEventListener('click', this.close.bind(this));
+    } else if (this.backdrop) {
+      this.backdrop.remove();
+      this.backdrop = null;
+    }
+  }
+  
+  open() {
+    this.toggleBackdrop(true);
+    this.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  close() {
+    this.toggleBackdrop(false);
+    this.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+customElements.define("main-modal", mainModal);

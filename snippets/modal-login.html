@@ -1,0 +1,40 @@
+<main-modal class="hidden" id="modalLogin">
+    <div class="modal" tabindex="-1">
+        <div class="modal-header">
+            <strong>로그인</strong>
+            <a href="javascript:;" role="button" class="btn-close modal-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4.43813 3.62625L17 16.1881L15.8036 17.3845L3.24176 4.82262L4.43813 3.62625Z" fill="#231E1E"/>
+                    <path d="M3 16.0619L15.5619 3.5L16.7582 4.69637L4.19637 17.2582L3 16.0619Z" fill="#231E1E"/>
+                </svg>
+            </a>
+        </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="form-login">
+                        <form class="form-login-form">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="이메일" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" name="password" placeholder="비밀번호" required>
+                            </div>
+                        </form>
+                        <div class="form-login-footer">
+                            <div class="form-login-remember">
+                                <input type="checkbox" id="remember" name="remember" style="vertical-align: text-bottom;">
+                                <label for="remember">로그인 상태 유지</label>    
+                            </div>
+                            <a href="javascript:;" class="text-link">비밀번호 찾기</a>
+                        </div>
+                        <button type="submit" class="button button--primary btn-login full-width">로그인</button>
+                        <div class="form-login-register">
+                            아직 회원이 아니신가요? <a href="javascript:;" class="text-link">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main-modal>

@@ -477,13 +477,16 @@ section + section {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .button.button--primary {
     background-color: #423067;
     color: #FFF;
 }
+
 .button.button--primary:hover {
     background: #31234D;
 }
+
 .button.button--tab {
     font-size: 14px;
     padding: 0 14px;
@@ -492,19 +495,53 @@ section + section {
     line-height: 1.4;
     height: 34px;
 }
+
 .button.button--tab:hover {
     background: #F6F6F6;
 }
+
 .button.button--tab.active {
     background-color: #423067;
     color: #FFF;
 }
+
 .button.button--tab.active:hover {
     background-color: #31234D;
 }
+
 .button.button--radius {
     border-radius: 100px;
 }
+
+.text-link {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
 .text-primary {
     color: #423067;
+}
+
+.full-width {
+    width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border-radius: 4px;
+    border: 1px solid rgba(35, 30, 30, 0.10);
+    background: #FAFAFA;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border: 1px solid #231E1E;
+    background: #FFF;
 }

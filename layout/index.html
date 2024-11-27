@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="icon" href="/assets/favicon.svg">
     <link rel="stylesheet" href="/assets/base.css"/>
+    <link rel="stylesheet" href="/assets/modal.css"/>
     <link rel="stylesheet" as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
@@ -20,7 +21,7 @@
         }
     </style>
     <script type="module" src="/assets/template.js" defer></script>
-    <script src="/assets/global.js" defer="defer"></script>
+    <script src="/assets/global.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -34,6 +35,17 @@
         <section data-section="featured-board"></section>
         <section data-section="text-banner"></section>
     </main>
+
+
+    <div class="page-width" style="margin: 40px auto">
+        <button data-modal-open="modalShare">공유하기</button>
+        <button data-modal-open="modalLogin">로그인</button>
+        <button data-modal-open="modalForm">신고하기</button>
+    </div>
+
+    <div data-snippet="modal-share"></div>
+    <div data-snippet="modal-login"></div>
+    <div data-snippet="modal-form"></div>
 
     <footer data-section="footer"></footer>
 </body>
