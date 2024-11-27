@@ -5,9 +5,6 @@ section[data-section="article-list-card"] {
     text-align: right;
     margin-bottom: 20px;
 }
-.swiper-buttons .swiper-slide {
-    width: auto;
-}
 .article-list-card {
     margin-top: 30px;
 }
@@ -87,6 +84,11 @@ section[data-section="article-list-card"] {
     text-align: right;
     position: relative;
 }
+.article-list-footer > button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 @media screen and (min-width: 767px) {
     .article-list-card {
         display: grid;
@@ -112,6 +114,79 @@ section[data-section="article-list-card"] {
         font-size: 18px;
     }
     .article-list-card__preview {
+        font-size: 14px;
+    }
+}
+
+
+
+section[data-section="article-list-text"] {
+    padding-top: 40px;
+}
+.section-title {
+    margin-bottom: 20px;
+}
+.article-list-table__wrap {
+    margin-top: 30px;
+}
+.article-list-table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+    table-layout: fixed;
+    border-bottom: 1px solid rgba(35, 30, 30, 0.10);
+}
+.article-list-table th,
+.article-list-table td {
+    border-top: 1px solid rgba(35, 30, 30, 0.10);
+    padding: 10px;
+}
+.article-list-table td {
+    font-weight: 500;
+}
+.article-list-table tr.bg {
+    background-color: #F6F6F6;
+}
+.article-list-table__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+    justify-content: flex-end;
+}
+.article-list-table__author > img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+.article-list-table__author > span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    opacity: 0.6;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.article-list-table__link {
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+.article-list-table__title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.article-list-table__comment-count {
+    color: rgba(35, 30, 30, 0.40);
+}
+.article-list-table__date {
+    color: rgba(35, 30, 30, 0.40);
+}
+@media screen and (min-width: 990px) {
+    .article-list-table__author {
+        justify-content: center;
+    }
+    .article-list-table__author > span {
         font-size: 14px;
     }
 }

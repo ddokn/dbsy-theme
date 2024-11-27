@@ -223,12 +223,12 @@ table:not([class]) {
     /* draws the table border  */
 }
 
-table:not([class]) td,
+/* table:not([class]) td,
 table:not([class]) th {
     padding: 1em;
     border: 0.1rem solid rgba(var(--color-foreground), 0.2);
 }
-
+ */
 @media screen and (max-width: 989px) {
     .small-hide {
         display: none !important;
@@ -437,13 +437,13 @@ details > * {
     display: none;
 }
 
-.setcion-title {
+.section-title {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
 }
 
-.setcion-sub-title {
+.section-sub-title {
     text-align: center;
     font-size: 16px;
     font-weight: 600;
@@ -456,10 +456,10 @@ section + section {
 }
 
 @media (min-width: 990px) {
-    .setcion-title {
+    .section-title {
         font-size: 32px;
     }
-    .setcion-sub-title {
+    .section-sub-title {
         text-align: left; 
     }    
 }
@@ -504,4 +504,7 @@ section + section {
 }
 .button.button--radius {
     border-radius: 100px;
+}
+.text-primary {
+    color: #423067;
 }
