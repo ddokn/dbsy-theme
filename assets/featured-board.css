@@ -125,3 +125,16 @@
     font-size: 14px;
     font-weight: 500;    
 }
+@media (min-width: 990px) {
+    div[data-section="featured-board"] {
+        display: flex;
+        gap: 20px;
+    }
+    div[data-section="featured-board"] > main-tab {
+        width: calc(60% - 10px);
+    }
+    .normal-board {
+        width: calc(40% - 10px);
+        margin-top: 0;
+    }
+}
