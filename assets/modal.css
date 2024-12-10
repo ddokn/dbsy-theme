@@ -243,7 +243,7 @@
     border-bottom: 2px solid #231E1E;
     background: transparent;
     border-radius: 0;
-    border-width: 0 0 1px;
+    border-width: 0 0 2px;
     width: 100%;
     font-size: 16px;
 }
@@ -266,4 +266,7 @@
         height: 56px;
         font-size: 18px;
     }
+    .full-modal .search-form input:focus {
+        border-width: 0 0 2px !important;
+    }  
 }

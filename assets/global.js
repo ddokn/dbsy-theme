@@ -331,6 +331,7 @@ class MainTab extends HTMLElement {
       this.tabBody = this.querySelectorAll('.tab-body');
       this.init();
   }
+
   init() {
       this.tabButton.forEach(item => {
           item.addEventListener('click', this.setTab.bind(this));
@@ -339,6 +340,7 @@ class MainTab extends HTMLElement {
           item.classList.toggle('hidden', index !== 0);
       })
   }
+
   setTab(event) {
       event.preventDefault();
       const index = parseInt(event.currentTarget.dataset.index);
@@ -600,7 +602,7 @@ document.addEventListener('click', function(e) {
 
 /**
  * 날짜 선택기 초기화 함수
- * flatpickr 라이브러리를 ��용하여 날짜와 시간 선택 기능을 구현
+ * flatpickr 라이브러리를 활용하여 날짜와 시간 선택 기능을 구현
  * 
  * @requires flatpickr
  * @fires flatpickr#onReady - 날짜 선택기가 초기화될 때 발생

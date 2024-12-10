@@ -886,6 +886,9 @@ div[data-snippet="board-filter"] > ul > li > a.active > img:last-child {
     align-items: center;
     gap: 4px;
 }
+.form-group.checkbox label {
+    margin-bottom: 0;
+}
 .btn-add {
     margin-top: 8px;
     color: #a995d8;
