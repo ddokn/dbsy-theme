@@ -131,24 +131,15 @@
 }
 
 /** 로그인 **/
+
+.form-login {
+    min-height: 180px;
+}
+
 .form-login-form {
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-.form-group > input {
-    display: flex;
-    width: 100%;
-    height: 44px;
-    padding: 12px 14px;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 8px;
-    align-self: stretch;
-    border-radius: 4px;
-    border: 1px solid rgba(35, 30, 30, 0.10);
-    background: #FAFAFA;
 }
 .form-login-footer {
     margin: 10px 0;
@@ -201,4 +192,78 @@
     justify-content: center;
     gap: 4px;
 
+}
+.form-complete {
+    text-align: center;
+    margin-top: 40px;
+}
+.form-complete__content {
+    padding: 40px 0 64px; 
+}
+.form-complete__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.form-complete__description {
+    font-size: 14px;
+}
+
+/** 검색 **/
+.full-modal {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: unset;
+    background: rgba(255, 255, 255, 0.96);
+}
+.full-modal .modal-header {
+    padding-top: 55px;
+    justify-content: flex-end;
+}
+.full-modal .modal-body {
+    padding: 20px;
+}
+.full-modal .search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.full-modal .search-form input {
+    display: flex;
+    height: 48px;
+    padding: 12px 28px 8px 8px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid #231E1E;
+    background: transparent;
+    border-radius: 0;
+    border-width: 0 0 1px;
+    width: 100%;
+    font-size: 16px;
+}
+.full-modal .search-form button {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@media (min-width: 990px) {
+    .full-modal .modal-header {
+        padding-top: 40px;
+    }
+    .full-modal .modal-body {
+        padding-top: 68px;
+    }
+    .full-modal .search-form input {
+        height: 56px;
+        font-size: 18px;
+    }
 }

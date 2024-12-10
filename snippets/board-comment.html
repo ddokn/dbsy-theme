@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="/theme/assets/board-comment.css">
+
+<div class="board-comment">
+    <div class="board-comment__header">
+        <div class="board-comment__header-left">
+            <div class="board-comment__like">
+                <a href="javascript:;" class="active"><!-- 좋아요 클릭 시 active 클래스 추가 -->
+                    <img class="board-comment__like-icon" src="/theme/assets/icon_favorite_default.svg" alt="" width="20" height="20" loading="lazy">
+                    <img class="board-comment__like-icon-active" src="/theme/assets/icon_favorite_active.svg" alt="" width="20" height="20" loading="lazy">
+                    <span>12</span>
+                </a>
+            </div>
+            <div class="board-comment__count">
+                <img src="/theme/assets/icon_comment.svg" alt="" width="20" height="20" loading="lazy">
+                <span>4</span>
+            </div>
+        </div>
+        <div class="board-comment__header-right">
+            <a href="javascript:;" data-modal-open="modalForm">
+                <img src="/theme/assets/icon_warning.svg" alt="" width="20" height="20" loading="lazy">
+                <span>신고</span>
+            </a>
+        </div>    
+    </div>
+    <ul class="board-comment__list list-unstyled">
+        <li class="board-comment__content">
+            <div class="board-comment__content-header">
+                <div class="board-comment__avatar active"><!-- 댓글 작성자 일 때 active 클래스 추가 -->
+                    <img src="/theme/assets/user.png" alt="" width="40" height="40" loading="lazy">
+                </div>
+                <div class="board-comment__content-header-info">
+                    <span>작성자</span>
+                    <div>
+                        <span class="opacity-60">2시간전</span>
+                        <a href="javascript:;" class="edit-button text-underline">수정</a>
+                        <a href="javascript:;" class="delete-button text-underline">삭제</a>
+                    </div>
+                </div>
+            </div>
+            <div class="board-comment__content-body deleted"><!-- 삭제된 댓글의 경우 deleted 클래스 추가 -->
+                삭제된 댓글입니다.
+            </div>
+            <div class="board-comment__reply">
+                <a href="javascript:;" class="text-underline reply-button">답글달기</a>
+                <!-- global.js에서 .reply-button 클릭 이벤트 참조 -->
+                <form class="form-report textarea-wrapper hidden">
+                    <div class="form-group">
+                        <textarea id="comment-reply-textarea" name="content" placeholder="로그인 후 작성 가능합니다." required 
+                            onfocus="this.closest('.textarea-wrapper').classList.add('focus')"
+                            onblur="this.closest('.textarea-wrapper').classList.remove('focus')"></textarea>
+                    </div>
+                    <button class="button button--primary">
+                        <img src="/theme/assets/icon_message.svg" width="20" height="20" loading="lazy">
+                        작성
+                    </button>
+                </form>
+            </div>
+        </li>
+        <ul class="board-comment__list list-unstyled">
+            <li class="board-comment__content">
+                <div class="board-comment__content-header">
+                    <div class="board-comment__avatar"><!-- 댓글 작성자 일 때 active 클래스 추가 -->
+                        <img src="/theme/assets/user.png" alt="" width="40" height="40" loading="lazy">
+                    </div>
+                    <div class="board-comment__content-header-info">
+                        <span>작성자</span>
+                        <div>
+                            <span class="opacity-60">2시간전</span>
+                            <a href="javascript:;" class="edit-button text-underline">수정</a>
+                            <a href="javascript:;" class="delete-button text-underline">삭제</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="board-comment__content-body">
+                    댓글 내용이 노출됩니다. 너무 유용하게 읽었습니다.
+                </div>
+                <div class="board-comment__reply">
+                    <a href="javascript:;" class="text-underline reply-button">답글달기</a>
+                    <form class="form-report textarea-wrapper hidden">
+                        <div class="form-group">
+                            <textarea id="comment-reply-textarea" name="content" placeholder="로그인 후 작성 가능합니다." required 
+                                onfocus="this.closest('.textarea-wrapper').classList.add('focus')"
+                                onblur="this.closest('.textarea-wrapper').classList.remove('focus')"></textarea>
+                        </div>
+                        <button class="button button--primary">
+                            <img src="/theme/assets/icon_message.svg" width="20" height="20" loading="lazy">
+                            작성
+                        </button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </ul>
+    <div class="board-comment__write">
+        <form class="form-report textarea-wrapper">
+            <div class="form-group">
+                <textarea id="comment-reply-textarea" name="content" placeholder="로그인 후 작성 가능합니다." required 
+                    onfocus="this.closest('.textarea-wrapper').classList.add('focus')"
+                    onblur="this.closest('.textarea-wrapper').classList.remove('focus')"></textarea>
+            </div>
+            <button class="button button--primary">
+                <img src="/theme/assets/icon_message.svg" width="20" height="20" loading="lazy">
+                작성
+            </button>
+        </form>
+    </div>
+</div>

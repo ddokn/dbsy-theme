@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/theme/assets/account.css">
+
+<div class="page-width page-width--small">
+    <h1 class="section-title text-center">아이디/패스워드 찾기</h1>
+    <main-tab>
+        <div class="tab-container tab-container--find-account">
+            <ul class="tab-list list-unstyled" data-role="tab-list">
+                <li class="tab-item">
+                    <a href="#find-id" class="tab-item__link active" data-index="0">
+                        아이디 찾기
+                    </a>
+                </li>
+                <li class="tab-item">
+                    <a href="#find-password" class="tab-item__link" data-index="1">
+                        비밀번호 찾기
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-body" id="find-id" data-role="tab-body">
+                <div class="tab-body__content">
+                    <div class="find-account__form">
+                        <div class="form-group error"><!-- 유효성 검사 오류 시 error 클래스 추가 -->
+                            <label for="phone">전화 번호</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="가입 당시 입력한 전화번호를 입력하세요.">
+                            <span class="help-block">일치하는 정보가 없습니다. 전화 번호를 다시 확인해주세요.</span>
+                        </div>
+                        <div class="find-account__button">
+                            <button type="button" class="button button--primary full-width">계정 찾기</button>
+                        </div>
+                    </div>
+
+                    <!-- 아이디 찾기 · 일치하는 정보 있음 -->
+                    <div class="find-account__form">
+                        <div class="find-account__result">
+                            <div class="find-account__result-title">
+                                일치하는 계정
+                            </div>
+                            <div class="find-account__result-content">
+                                <span class="find-account__result-content-id">
+                                    abc*********@gmail.com
+                                </span>
+                                <span class="find-account__result-content-date opacity-60">
+                                    YYYY-MM-DD 가입
+                                </span>
+                            </div>
+                        </div>
+                        <div class="find-account__result-button">
+                            <a href="#" class="text-underline">아이디 전체 확인하기</a>
+                        </div>
+
+                        <div class="find-account__button">
+                            <div class="buttonWrap">
+                                <button type="button" class="button full-width">로그인하기</button>
+                                <button type="button" class="button button--primary full-width">계정 찾기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-body" id="find-password" data-role="tab-body">
+                <div class="tab-body__content">
+                    <div class="find-account__button">
+                        <button type="button" class="button button--primary full-width">본인 인증 하기</button>
+                    </div>
+
+                    <div class="find-account__form global-form">
+                        <div class="form-group">
+                            <label for="password">새 비밀번호</label>
+                            <input type="password" id="password" class="form-control" placeholder="새로운 비밀번호를 입력하세요.">
+                            <span class="info-block">6자리 이상, 영문과 숫자를 반드시 포함해주세요.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-check">새 비밀번호 확인</label>
+                            <input type="password" id="password-check" class="form-control" placeholder="새로운 비밀번호를 입력하세요.">
+                            <span class="info-block">6자리 이상, 영문과 숫자를 반드시 포함해주세요.</span>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="button button--primary full-width">비밀번호 재설정 후 로그인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main-tab>
+</div>

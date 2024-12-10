@@ -1,0 +1,85 @@
+<div class="page-width" style="margin: 40px auto">
+    <h2 class="page-title">게시판 이름</h2>
+    
+    <form method="post">
+        <div class="form-wrapper">
+            <div class="form-group">
+                <select id="category" name="category">
+                    <option value="1">카테고리 1</option>
+                    <option value="2">카테고리 2</option>
+                    <option value="3">카테고리 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="full-width" type="text" id="article-title" name="article-title" placeholder="제목을 입력해 주세요.">
+            </div>
+        </div>
+        <div class="form-wrapper">
+            <h3>투표 주제</h3>
+            <div class="form-group">
+                <input class="full-width" type="text" id="vote-title" name="vote-title" placeholder="제목을 입력해 주세요.">
+            </div>
+            <h3>선택 항목</h3>
+            <div class="form-group">
+                <input class="full-width" type="text" id="vote-option-1" name="vote-option-1" placeholder="제목을 입력해 주세요." readonly>
+                <input class="full-width" type="text" id="vote-option-2" name="vote-option-2" placeholder="제목을 입력해 주세요." readonly>
+                <div class="form-group-delete">
+                    <input class="full-width" type="text" id="vote-option-3" name="vote-option-3" placeholder="제목을 입력해 주세요.">
+                    <button class="btn btn-delete">
+                        <img src="/theme/assets/icon_close.svg" width="16" height="16" alt="삭제">
+                    </button>
+                </div>
+                <a href="#" class="btn btn-add text-underline">항목 추가</a>
+            </div>
+            <div class="form-group display-flex">
+                <div>
+                    <h3>선택 가능한 항목 수</h3>
+                    <select id="vote-count" name="vote-count">
+                        <option value="1">1개</option>
+                        <option value="2">2개</option>
+                        <option value="3">3개</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>투표 권한수</h3>
+                    <select id="vote-auth" name="vote-auth">
+                        <option value="1">1개</option>
+                        <option value="2">2개</option>
+                        <option value="3">3개</option>
+                    </select>
+                </div>
+            </div>
+            <h3>투표 기간</h3>
+            <div class="form-group display-flex">
+                <input type="text" id="startDatePicker" placeholder="시작 시간을 설정해 주세요.">
+                <span>~</span>
+                <input type="text" id="endDatePicker" placeholder="종료 시간을 설정해 주세요.">
+            </div>
+        </div>
+
+        <div class="form-wrapper">
+            <textarea id="mytextarea"></textarea>
+        </div>
+        
+        <div class="form-wrapper">
+            <div class="form-group checkbox">
+                <input type="checkbox" id="is-secret" name="is-secret">
+                <label for="is-secret">
+                    보좌진 전용 게시글로 작성합니다.
+                </label>
+                <div class="tooltip-wrapper">
+                    <a href="javascript:void(0)" class="tooltip-trigger">
+                        <img src="/theme/assets/icon_help.svg" width="16" height="16" alt="툴팁">
+                    </a>
+                    <span class="tooltip">
+                        해당 기능을 활성화하면 보좌진 인증 회원만 게시글 열람 및 댓글 작성이 가능합니다.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="button-group display-flex">
+            <button type="button" class="button button--secondary">취소</button>
+            <button type="submit" class="button button--primary">게시글 작성</button>
+        </div>
+    </form>
+</div>

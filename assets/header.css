@@ -98,6 +98,15 @@ header {
     display: block;
 }
 
+.header__icon--customer,
+.is-customer .header__icon {
+    display: none;
+}
+
+.is-customer .header__icon--customer {
+    display: block;
+}
+
 @media (min-width: 990px) {
     header{
        top: 0; 

@@ -19,10 +19,19 @@
                                 onblur="this.closest('.textarea-wrapper').classList.remove('focus')"></textarea>
                         </div>
                         <button type="submit" class="button button--primary full-width">
-                            <img src="/assets/icon_edit.svg" width="20" height="20">
+                            <img src="/theme/assets/icon_edit.svg" width="20" height="20" loading="lazy">
                             제출
                         </button>
                     </form>
+                    
+                    <!-- 폼 전송이 완료된 경우 -->
+                    <div class="form-complete">
+                        <div class="form-complete__content">
+                            <div class="form-complete__title">제출이 완료 되었습니다.</div>
+                            <div class="form-complete__description opacity-60">신고 내용이 성공적으로 접수되었습니다.<br/>소중한 의견 감사드리며, 관리자가 검토 후 조치할 예정입니다.</div>
+                        </div>
+                        <button type="submit" class="button button--primary full-width btn-close modal-close">확인</button>
+                    </div>
                 </div>
             </div>
         </div>  

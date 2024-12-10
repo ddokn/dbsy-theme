@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/theme/assets/board-vote.css">
+
+<div class="article-body__vote">
+    <div class="article-body__vote-header">
+        <span class="article-body__vote-header-status">진행중</span><!-- 진행중, 투표종료. 종료 시 disabled 추가 -->
+        <div class="article-body__vote-header-title">투표 타이틀</div>
+    </div>
+    <div class="article-body__vote-info">
+        <ul class="article-body__vote-info-list list-unstyled">
+            <li class="article-body__vote-info-item">
+                <img src="/theme/assets/icon_book.svg" alt="" width="24" height="24" loading="lazy">
+                <span class="opacity-60">현재 N명 참여</span>
+            </li>
+            <li class="article-body__vote-info-item">
+                <img src="/theme/assets/icon_people.svg" alt="" width="24" height="24" loading="lazy">
+                <span class="opacity-60">누구나</span>
+            </li>
+            <li class="article-body__vote-info-item">
+                <img src="/theme/assets/icon_calendar.svg" alt="" width="24" height="24" loading="lazy">
+                <span class="opacity-60">2024.12.31 00:00까지</span>
+            </li>
+        </ul>
+    </div>
+    <form class="article-body__vote-form">
+        <div class="article-body__vote-form-item">
+            <input type="radio" name="vote" id="vote-01">
+            <label for="vote-01">찬성</label>
+        </div>
+        <div class="article-body__vote-form-item">
+            <input type="radio" name="vote" id="vote-02">
+            <label for="vote-02">반대</label>
+        </div>
+        <div class="article-body__vote-form-item">
+            <input type="radio" name="vote" id="vote-03">
+            <label for="vote-03">기타</label>
+        </div>
+    </form>
+    <div class="article-body__vote-result">
+        <div class="article-body__vote-result-item">
+            <div class="article-body__vote-result-item-header">
+                <span class="article-body__vote-result-title">찬성</span>
+                <span class="article-body__vote-result-info">00% (N명)</span>
+            </div>
+            <div class="article-body__vote-result-bar">
+                <div class="article-body__vote-result-bar-inner" style="width: 10%;"></div>
+            </div>
+        </div>
+        <div class="article-body__vote-result-item">
+            <div class="article-body__vote-result-item-header">
+                <span class="article-body__vote-result-title">반대</span>
+                <span class="article-body__vote-result-info">00% (N명)</span>
+            </div>
+            <div class="article-body__vote-result-bar">
+                <div class="article-body__vote-result-bar-inner" style="width: 40%;"></div>
+            </div>
+        </div>
+        <div class="article-body__vote-result-item">
+            <div class="article-body__vote-result-item-header">
+                <span class="article-body__vote-result-title">기타</span>
+                <span class="article-body__vote-result-info">00% (N명)</span>
+            </div>
+            <div class="article-body__vote-result-bar">
+                <div class="article-body__vote-result-bar-inner" style="width: 20%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="article-body__vote-footer">
+        <button class="button button--primary full-width">투표하기</button>
+        <span class="article-body__vote-footer-info opacity-60">최대 N개 선택 가능</span>
+    </div>
+    <div class="article-body__vote-footer-end">
+        <button class="button">
+            <img src="/theme/assets/icon_alert.svg" alt="" width="20" height="20" loading="lazy">
+            <span>투표 종료</span>
+        </button>
+    </div>
+</div>

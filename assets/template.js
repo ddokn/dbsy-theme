@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function loadComponents(elements, type) {
-    const basePath = type === 'section' ? '/sections' : '/snippets';
+    const basePath = type === 'section' ? '/theme/sections' : '/theme/snippets';
     
     return Promise.all(
         Array.from(elements).map(async element => {

@@ -1,0 +1,189 @@
+section[data-section="account"],
+section[data-section="register"],
+section[data-section="find-account"],
+section[data-section="complete-register"],
+section[data-section="email-verification"],
+section[data-section="email-return"] {
+    padding-top: 40px;
+}
+.account__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.account__menu-item {
+    display: flex;
+    padding: 8px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 100px;
+    border: 1px solid rgba(35, 30, 30, 0.15);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.account__menu-item.active {
+    background: #452F6B;
+    color: #fff;
+}
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.password-wrapper button {
+    font-size: 16px;
+    border: 1px solid rgba(35, 30, 30, 0.15);
+    background: #FFF;
+    min-width: 94px;
+}
+.nickname-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    font-size: 12px;
+}
+.global-form-footer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-end;
+}
+.withdraw-text {
+    font-size: 14px;
+}
+.form-group-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.form-group.display-flex {
+    justify-content: space-between;
+}
+.terms-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 10px;
+    background: #FAFAFA;
+    padding: 16px;
+    margin-top: 30px;
+}
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.find-account__button {
+    margin-top: 30px;
+}
+.tab-container--find-account .tab-list {
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+}
+.tab-container--find-account .tab-list > li {
+    flex: 1;
+    text-align: center;
+}
+.tab-container--find-account .tab-list > li .tab-item__link {
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(35, 30, 30, 0.15);
+    transition: all 0.3s;
+}
+.tab-container--find-account .tab-list > li .tab-item__link.active {
+    border-bottom: 1px solid #231E1E;
+}
+.tab-body {
+    margin-top: 30px;
+}
+
+.find-account__result {
+    display: flex;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(35, 30, 30, 0.10);
+    background: #FFF;
+}
+.find-account__result-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.find-account__result-content {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+.find-account__result-content-id {
+    font-size: 16px;
+}
+.find-account__result-content-date {
+    font-size: 12px;
+}
+.find-account__result-button {
+    margin-top: 10px;
+ 
+}
+.find-account__result-button a {
+    color: #A995D8;
+}
+
+.complete-register__text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+.complete-register__text.text-accent {
+    color: #FF5E5E;
+}
+.complete-register__list {
+    text-align: left;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 10px;
+    background: #FAFAFA;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+}
+.complete-register__button {
+    margin-top: 40px;
+}
+.complete-register__button .button-group {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.list-accent {
+    margin-top: 10px;
+}
+
+.complete-register__button .buttonWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 990px) {
+    .complete-register__text,
+    .complete-register__list {
+        font-size: 18px;
+    }
+}
+
+.email-return__button {
+    margin-top: 40px;
+}

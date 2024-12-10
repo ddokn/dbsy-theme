@@ -1,7 +1,11 @@
-<link rel="stylesheet" href="/assets/article-list.css">
+<link rel="stylesheet" href="/theme/assets/article-list.css">
 
-<h2 class="section-title page-width">게시판 이름</h2>
-<div data-snippet="button-group" class="page-width mobile-no-gutter"></div>
+<h1 class="section-title page-width">게시판 이름</h1>
+
+<div class="button-filter-container">
+    <div data-snippet="button-group" class="page-width mobile-no-gutter"></div>
+    <div data-snippet="board-filter" class="page-width"></div>
+</div>
 
 <div class="article-list-text page-width">
     <div class="article-list-table__wrap">
@@ -38,7 +42,7 @@
                     </td>
                     <td>
                         <div class="article-list-table__author">
-                            <img src="/assets/user.png" alt="작성자" width="100%" height="100%">
+                            <img src="/theme/assets/user.png" alt="작성자" width="100%" height="100%" loading="lazy">
                             <span>작성자1</span>
                         </div>
                     </td>
@@ -55,7 +59,7 @@
                     </td>
                     <td>
                         <div class="article-list-table__author">
-                            <img src="/assets/user.png" alt="작성자" width="100%" height="100%">
+                            <img src="/theme/assets/user.png" alt="작성자" width="100%" height="100%" loading="lazy">
                             <span>작성자1</span>
                         </div>
                     </td>
@@ -69,10 +73,10 @@
 
 <div class="article-list-footer page-width">
     <div data-snippet="pagination"></div>
-    <button class="button button--primary">
+    <a class="button button--primary" href="/theme/layout/page-board-write.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M11.207 5.79302L14.207 8.79302M3.70703 16.293L7.34535 15.5599C7.5385 15.521 7.71585 15.4259 7.85513 15.2865L15.9999 7.13734C16.3904 6.74663 16.3901 6.11331 15.9993 5.72292L14.2739 3.99952C13.8833 3.6093 13.2502 3.60957 12.8599 4.00012L4.71433 12.1502C4.57532 12.2892 4.4804 12.4662 4.44145 12.659L3.70703 16.293Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>            
         글쓰기
-    </button>
+    </a>
 </div>

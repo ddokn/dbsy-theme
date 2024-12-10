@@ -4,7 +4,7 @@
     height: 80px;
     border-radius: 12px;
     overflow: hidden;
-    background: url(/assets/banner-02.png) no-repeat center center / cover;
+    background: url(/theme/assets/banner-02.png) no-repeat center center / cover;
     display: flex;
     align-items: center;
     padding: 0 32px;

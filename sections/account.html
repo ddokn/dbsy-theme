@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/theme/assets/account.css">
+
+<div class="page-width page-width--small">
+    <h1 class="section-title text-center">마이페이지</h1>
+    <div class="account__menu">
+        <a href="javascript:;" class="account__menu-item button button--tab button--radius active">내 정보수정</a>
+        <a href="javascript:;" class="account__menu-item button button--tab button--radius">카테고리</a>
+    </div>
+    <div class="account__content">
+        <div class="account__content-inner">
+            <form id="account__form" class="global-form" action="">    
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="abc123@gmail.com" required disabled>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="*********" required disabled>
+                        <button type="button" class="button password-toggle" data-modal-open="modalPassword">변경하기</button>
+                    </div>
+                </div>
+                <div class="form-group">  
+                    <label for="nickname">닉네임</label>
+                    <input type="text" id="nickname" name="nickname" class="form-control" placeholder="닉네임을 입력해주세요." required>
+                    <div class="nickname-wrapper opacity-60">
+                        <p>* 특수문자 및 공백 사용불가</p>
+                        <p>* 최대 글자 수: 영문 12자 또는 한글 6자</p>
+                        <p>* 영문+숫자 4개</p>
+                    </div>
+                </div>
+                <div class="form-group">  
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="홍길동" required disabled> 
+                </div>
+                <div class="form-group">  
+                    <label for="phone">휴대폰번호</label>
+                    <input type="text" id="phone" name="phone" class="form-control" placeholder="010-1234-5678" required disabled>
+                </div>
+                <div class="form-group">  
+                    <label for="job">직업</label>
+                    <select name="job" id="job" class="form-control">  
+                        <option value="1">국회 직원</option>
+                        <option value="2">국회 외 직원</option>
+                    </select>
+                    <p class="info-block">직업을 선택해주세요.</p>
+                </div>
+            </form>
+            <div class="global-form-footer">
+                <button type="button" form="account__form" class="button button--primary full-width">정보수정</button>
+                <a href="javascript:;" class="text-underline" data-modal-open="modalWithdraw">회원탈퇴</a>
+            </div>
+        </div>
+    </div>
+</div>

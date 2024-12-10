@@ -126,11 +126,11 @@
     font-weight: 500;    
 }
 @media (min-width: 990px) {
-    div[data-section="featured-board"] {
+    .featured-board {
         display: flex;
         gap: 20px;
     }
-    div[data-section="featured-board"] > main-tab {
+    .featured-board > main-tab {
         width: calc(60% - 10px);
     }
     .normal-board {
